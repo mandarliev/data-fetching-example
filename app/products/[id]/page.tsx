@@ -1,3 +1,4 @@
+import { Product } from "@/typings";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -5,20 +6,6 @@ type PageProps = {
   params: {
     id: string;
   };
-};
-
-type Product = {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  discountPercentage: number;
-  rating: number;
-  stock: number;
-  brand: string;
-  category: string;
-  thumbnail: string;
-  images: string[];
 };
 
 // Helper function for fetching the data
