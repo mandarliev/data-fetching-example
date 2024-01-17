@@ -38,10 +38,19 @@ async function ProductPage({ params: { id } }: PageProps) {
   if (!product.id) return notFound();
 
   return (
-    <div className="m-5 space-y-5">
-      <h1>{product.title}</h1>
-      <h2>{product.description}</h2>
-      <h3>${product.price}</h3>
+    <div>
+        <header className="p-5 bg-green-400">
+        <nav className="flex space-x-10">
+          <p>HOME</p>
+          <p>CONTACT</p>
+          <p>LINK</p>
+        </nav>
+      </header>
+      <div className="m-5 space-y-5">
+        <h1>{product.title}</h1>
+        <h2>{product.description}</h2>
+        <h3>${product.price}</h3>
+      </div>
     </div>
   );
 }
