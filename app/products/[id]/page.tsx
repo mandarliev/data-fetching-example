@@ -2,6 +2,7 @@ import { Product } from "@/typings";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
+import ProductList from "../ProductList";
 
 type PageProps = {
   params: {
@@ -33,10 +34,15 @@ async function ProductPage({ params: { id } }: PageProps) {
           <p>Link</p>
         </nav>
       </header>
-      <div className="m-5 space-y-5">
-        <h1>{product.title}</h1>
-        <h2>{product.description}</h2>
-        <h3>${product.price}</h3>
+      <div className="flex space-x-5 space-y-5">
+        <div className="flex-2 m-5">
+          <ProductList/>
+        </div>
+        <div className="flex-1">
+          <h1>{product.title}</h1>
+          <h2>{product.description}</h2>
+          <h3>${product.price}</h3>
+        </div>
       </div>
     </div>
   );
