@@ -1,4 +1,5 @@
 import { Product } from "@/typings";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
 
@@ -15,7 +16,6 @@ const getProduct = async (id: string) => {
   });
 
   const product: Product = await res.json();
-  console.log("FETCHING DATA NEW", product);
   return product;
 };
 
@@ -26,11 +26,11 @@ async function ProductPage({ params: { id } }: PageProps) {
 
   return (
     <div>
-        <header className="p-5 bg-green-400">
+      <header className="p-5 bg-green-400">
         <nav className="flex space-x-10">
-          <p>HOME</p>
-          <p>CONTACT</p>
-          <p>LINK</p>
+          <Link href="/">Home</Link>
+          <p>Contact</p>
+          <p>Link</p>
         </nav>
       </header>
       <div className="m-5 space-y-5">
