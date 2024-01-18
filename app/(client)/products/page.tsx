@@ -1,6 +1,7 @@
 import { Product } from "@/typings";
-import React from "react";
+import React, { Suspense } from "react";
 import ProductList from "./ProductList";
+import Loading from "./loading";
 
 // Helper function to fetch all products
 const getProducts = async () => {
@@ -14,7 +15,9 @@ async function ProductsPage() {
   return (
     <div className="space-x-5 space-y-5">
       <h1 className="m-5">List of products</h1>
-      <ProductList />
+      <Suspense fallback={<Loading />}>
+        <ProductList />
+      </Suspense>
     </div>
   );
 }
